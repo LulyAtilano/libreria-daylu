@@ -1,0 +1,27 @@
+{
+  "name": "producto-final",
+  "description": "* **Track:** _Common Core_\r * **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_\r * **Unidad:** _Producto final_",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LulyAtilano/libreria-daylu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LulyAtilano/libreria-daylu/issues"
+  },
+  "homepage": "https://github.com/LulyAtilano/libreria-daylu#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "karma": "^2.0.4",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "mocha": "^5.2.0"
+  }
+}

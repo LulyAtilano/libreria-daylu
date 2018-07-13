@@ -1,15 +1,13 @@
-# extractLinksFromMd
+# DayLu Library
 
-* **Track:** _Common Core_
+* **Autoras :** _Lourdes Atilano y Dayra Álvarez_
+* **Bootcamp :** _Laboratoria - 1er Generación GDL_
 * **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_
-* **Unidad:** _Producto final_
 
 ***
 
-Implementar un módulo de Node.js que reciba un string (en formato Markdown) y
-extraiga todos los links encontrados. La implementación debe ser una función que
-recibe un string y devuelve un arreglo de objetos como se muestra en el este
-ejemplo:
+La biblioteca **DayLu** implementa un módulo de Node.js que recibe un string (en formato Markdown) y
+extrae todos los links encontrados. Devolviendo un arreglo de objetos como se muestra a continuación:
 
 ```js
 const extractLinksFromMd = require('extract-links-from-md');
@@ -36,3 +34,19 @@ console.log(links);
 //   { href: 'http://foo.com', text: 'foo' },
 // ]
 ```
+***
+## Instrucciones de instalación
+
+Usando npm:
+
+```js
+ $ npm i -g npm
+ $ npm i --save DayLu
+```
+
+## Uso
+
+## Documentación de DayLu
+
+
+###### DayLu Library

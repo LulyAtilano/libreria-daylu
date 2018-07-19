@@ -1,4 +1,4 @@
-# DayLu Library
+# DayLu Library Markdown
 
 * **Autoras :** _Lourdes Atilano y Dayra Álvarez_
 * **Bootcamp :** _Laboratoria - 1er Generación GDL_
@@ -45,6 +45,8 @@ Usando npm:
 ```
 
 ## Uso
+
+1. Se agrega el archivo markdown a trabajar en la carpeta ms bajo el nombre README.md
 
 ## Documentación de DayLu
 

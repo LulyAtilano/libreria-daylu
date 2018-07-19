@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-fs.readFile("../md/README.md", "utf-8", (err, data) => {
+fs.readFile("../md/*.md", "utf-8", (err, data) => {
     if(err) {
         console.log("error", err);
         

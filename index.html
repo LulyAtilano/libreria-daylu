@@ -6,16 +6,18 @@
         <title> Libreria DayLu </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Css Files-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     </head>
     <body>
         <h1>Markdown url detector</h1>
         <form>
-            <textarea onfocus="this.value=''" id="userInput">Some text...</textarea>
+            <textarea onfocus="this.value=''" id="userInput">Paste here...</textarea>
           </form>
         <button>Find url</button>
         <!--Contenedor de respuesta-->
-        <div id="showResult"></div>
+        <div id="showResult" ></div>
+        <a href=""><i id="copyIcon" class="fas fa-copy"></i></a>
         <!-- Js Files -->
         <script src="src/modules/getUrlsMd.js"></script>
     </body>

@@ -1,12 +1,13 @@
 {
-  "name": "producto-final",
-  "description": "* **Track:** _Common Core_\r * **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_\r * **Unidad:** _Producto final_",
+  "name": "daylu library-markdown-test-2018",
+  "description": "librería usando JavaScript para recuperar links en archivos markdown",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/getUrlsMd.js",
   "scripts": {
-    "test": "karma start --single-run"
+    "test": "karma start --single-run",
+    "build": ""
   },
-  "repository": {
+  "repository": {""
     "type": "git",
     "url": "git+https://github.com/LulyAtilano/libreria-daylu.git"
   },

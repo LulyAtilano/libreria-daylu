@@ -46,7 +46,8 @@ Usando npm:
 
 ## Uso
 
-1. Se agrega el archivo markdown a trabajar en la carpeta ms bajo el nombre README.md
+1. Se agrega el archivo markdown a trabajar en la carpeta ms bajo el nombre README.md 
+2. 
 
 ## Documentación de DayLu
 

@@ -10,13 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/LulyAtilano/libreria-daylu.git"
   },
-  "author": "",
+  "author": "Lourdes Atilano y Dayra Alvarez",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LulyAtilano/libreria-daylu/issues"
   },
   "homepage": "https://github.com/LulyAtilano/libreria-daylu#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "karma": "^2.0.4",
     "karma-chai": "^0.1.0",

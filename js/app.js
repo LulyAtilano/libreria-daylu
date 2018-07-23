@@ -1,3 +1,10 @@
+function demoText(){
+    var demo = document.getElementById("userInput").innerHTML;
+    var result = demo.replace("Microsoft", "W3Schools");
+    document.getElementById("userInput").innerHTML = result;
+}
+
+
 function getUrlsMd(markdown){
     let regex = /!?\[([^\[.]+?)\]\((.+?)\)/g
 
@@ -35,8 +42,7 @@ function getUrlsMd(markdown){
   );
   console.log(links);
 
-
-
+ 
 
 
 

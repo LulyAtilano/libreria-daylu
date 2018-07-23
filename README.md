@@ -60,3 +60,9 @@ const getUrlsMd = require('getUrlsMd');
 1. Abrir archivo index.html
 2. Insertar en el form el texto en formato markdown de donde se quieran extrar los links (url y href), dentro del div con id "userInput".
 3. Dar click en el botón y la información aparecerá pintada en el div inferior con id "showResult".
+
+o se puede hacer uso de la librería en el html enlazanddo el siguiente script:
+
+```js
+<script src="./lib/modules/getUrlsMd.js"></script>
+ ```

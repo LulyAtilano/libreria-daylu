@@ -1,170 +1,85 @@
-function demoText(){
-    var demo = document.getElementById("userInput").innerHTML;
-    var result = demo.replace("Microsoft", "W3Schools");
-    document.getElementById("userInput").innerHTML = result;
-}
+// EL TEXTO QUE INGRESA EL USUARIO EN EL INPUT SE TRANSFORMARÁ EN UN TEMPLATE STRING
 
+let btn = document.getElementById('btn');
+btn.addEventListener('click', transformMdToString);
 
-function getUrlsMd(markdown){
-    let regex = /!?\[([^\[.]+?)\]\((.+?)\)/g
+function transformMdToString(){
+    let textInput = `${document.getElementById('userInput').value}`;
+   // console.log(textInput);
 
-    let foundMatches = [];
-    let match=[];
+    let printUrlsMd = getUrlsMd(textInput);
+    console.log(printUrlsMd);
+    
+    //1ER INTENTO PARA IMPRIMIR LOS OBJETOS EN EL DIV SHOWRESULT
+    //let textUrlsMds = Object.values(printUrlsMd);
+    //console.log(textUrlsMds);
 
-    while( ( match = regex.exec(markdown) ) !== null) {
-      if (match[0].startsWith("!")){ continue;}
+    //2DO INTENTO
+    //JSON.stringify(printUrlsMd,replacer);
+  
 
-      var match1 = {
-        'href' : match[2],
-        'text': match[1]
-      }
+    //let textObject = document.createTextNode(JSON.stringify(printUrlsMd,replacer));
+    //console.log(textObject);
 
-      foundMatches.push(match1);
+    // let containerText = document.getElementById('showResult').innerHTML;
 
+    printTextObject(printUrlsMd);
+
+    //return getUrlsMd;
+};
+
+function printTextObject(printUrlsMd) {    
+    let textObjetList = document.createElement('p');
+    let containerText = document.getElementById('showResult')
+    // let stringText = '';
+    console.log(printUrlsMd.length);
+
+    for (let i = 0; i < printUrlsMd.length; i++ ) {
+        console.log(i);
+        
+        console.log(printUrlsMd[i]);
+        
+        let href = printUrlsMd[i].href;
+        let text = printUrlsMd[i].text;
+
+        let hrefObject = document.createTextNode(href + " " +text);
+        console.log(hrefObject);
+        // let textObject = document.createTextNode();
+        // console.log(textObject);
+        textObjetList.appendChild(hrefObject);
+        containerText.appendChild(textObjetList);
     }
-    return foundMatches;
-  }
+        //ANIDAR ELEMENTOS
+        // textObjetList.appendChild(hrefObject);
+        // textObjetList.appendChild(textObject);
+        
 
-  var links = getUrlsMd(`# Lorem ipsum
+//    return stringText;
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut [labore](https://en.wiktionary.org/wiki/labore) et
-  [dolore](https://en.wiktionary.org/wiki/dolore) magna aliqua. Ut enim ad minim
-  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat.
-
-  [foo](http://foo.com)
-
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-  culpa qui officia deserunt mollit anim id est laborum.`
-
-  );
-  console.log(links);
-
- 
-
-
-
-
-
-
-
-/*//Buscar http en string
-var content;
-
-
-const textGiven =`# Lorem ipsum
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut [labore](https://en.wiktionary.org/wiki/labore) et
-[dolore](https://en.wiktionary.org/wiki/dolore) magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.
-
-[foo](http://foo.com)
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.`
-
-//Señalar elementos que identifican un url
-var searchUrl = /\[.+\]\(.+\)/g;
-
-var urlFound = textGiven.match(searchUrl);
-console.log(urlFound)
-
-
-
-console.log(urlFound[0]); //Es un array de un solo index
-//Separar array url found en name y link
-
-//Dividir nombre de url
-/*function divideStringTittle (){
-
-    var getTittle = /\[\]/g;
-    var urlTittle = urlFound.match(getTittle);
-    console.log(getTittle)
 }
 
-divideStringTittle ();
 
-//Dividir link del url
-function divideStringLink (){
 
-    var getLink = ^(http|https):\/\ $/g;  //No sirve linea rejex , opcion 2: /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/ opcion3: https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)
-    var urlLink = urlFound.match(getLink);
-    console.log(getLink)
-}
+/*
+    for ( const prop in textInput ) {
+        //console.log (`href: ${textInput}, text: ${textInput}`);
+        return (`href: ${textInput}, text: ${textInput}`);
+    }
+    //return (`href: ${textInput}, text: ${textInput}`);
+*/
 
-divideStringLink ();
-
-//Asignar getTittle como key, getLink como value y convertir a objeto textGivenUrl
-
-/*var textGivenUrl = {
-   'name': 'urlTittle',
-   'link': 'urlLink'
+/*function replacer(key, value) {
+    // Filtrando propiedades 
+    if (typeof value === "string") {
+      return undefined;
+    }
+    return value;
 }*/
 
-/*var textGivenUrl1 = {
-    textGiven['name'] = '',
-    textGiven['link'] = ''
-}
-
-console.log(textGivenUrl1)
-
-var textGivenUrl2 = {
-    textGiven['name'] = '',
-    textGiven['link'] = ''
-}
-
-console.log(textGivenUrl2)
-
-//Hacer array con los dos objetos
+// transformMdToString();
 
 
-
-
-
-
-
-
-
-
-
-
-/*const fs = require('fs');
-
-fs.readFile("../md/README.md", "utf-8", (err, data) => {
-   if(err) {
-       console.log("error", err);
-
-   } else {
-       console.log(data);
-
-   }
-
-  function getUrl (){
-      var searchUrl = /\[.+\]\(.+\)/g;
-  }
-});*/
-
-
-/*var textSample = "textSample.md";
-
-var textGiven = document.getElementById('textSample.md');
-console.log(textGiven)*/
-
-/*var content;
-
-function getInput() {
-    var userInput = document.getElementById("userInput").value;
-    console.log(userInput);
-}
-
-getInput();
-
-const textGiven =`# Lorem ipsum
+/*const links = getUrlsMd(`# Lorem ipsum
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut [labore](https://en.wiktionary.org/wiki/labore) et
@@ -178,57 +93,6 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.`
 
-//Señalar elementos que identifican un url
-var searchUrl = /\[.+\]\(.+\)/g;
+);*/
 
-var getUrl = textGiven.match(searchUrl);
-console.log(getUrl);
-
-
-/*const fs = require('fs');
-
-fs.readFile("../md/README.md", "utf-8", (err, data) => {
-   if(err) {
-       console.log("error", err);
-   } else {
-       console.log(data);
-   findUrl();
-   }
-});
-
-const searchUrl = /\[(.?)\]\((.?|(http?|ftp):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/+#-]*[\w@?^=%&/+#-]))\)/gi;
-console.log(searchUrl)
-
-const findUrl = function (regex) {
-
-const fs = require('fs');
-
-fs.readFile("../md/README.md", "utf-8", (err, data) => {
-    if(err) {
-        console.log("error", err);
-
-    } else {
-        console.log(data);
-
-    //findUrl();
-
-    }
-});
-
-const regex = /\[(.?)\]\((.?|(https?|ftp):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/+#-]*[\w@?^=%&/+#-]))\)/gi;
-
-const findUrl = function (regex) {
-
- var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
-
-var pathArray = window.location.pathname.split( '/' );
-
-var secondLevelLocation = pathArray[0];
-
-var newPathname = "";
-for (i = 0; i < pathArray.length; i++) {
-  newPathname += "/";
-  newPathname += pathArray[i];
-}
-
-*/
+//console.log(links);

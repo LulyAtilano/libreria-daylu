@@ -1,4 +1,4 @@
-# DayLu Library
+# DayLu Library Markdown
 
 * **Autoras :** _Lourdes Atilano y Dayra Álvarez_
 * **Bootcamp :** _Laboratoria - 1er Generación GDL_
@@ -72,6 +72,12 @@ Para ejecutarse desde Node.js de introduce **DayLu-library-markdown-2018** más 
  Este uso supone la instalacion de require.js , en caso de usar el archivo directamente sera necesario  reemplazar **requirejs** con el source del archivo , ejemplo: **('../geturlurlsmd.js')**
 
 ## Uso en web. 
+
+1. Abrir archivo index.html
+2. Insertar en el form el texto en formato markdown de donde se quieran extrar los links (url y href).
+3. Dar click en el botón y la información aparecerá en el div inferior.
+
+## Documentación de DayLu
 
    Se agrega el index.html incluido en el paquete DayLu, al ejecutarlo direcciona a la web de la libreria, donde solo sera necesario ingresar el texto a revisar para obtener el resultado.
    

@@ -1,5 +1,5 @@
 {
-  "name": "daylu-library-markdown-2018",
+  "name": "daylu-library-markdown",
   "version": "1.0.0",
   "description": "librería usando JavaScript para recuperar links en archivos markdown",
   "main": "getUrlsMd.js",
